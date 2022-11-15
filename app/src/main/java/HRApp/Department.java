@@ -26,4 +26,8 @@ public class Department {
 
         return nonNullEmployees;
     }
+
+    public int getNumberOfEmployees() {
+        return lastValidEmployee + 1;
+    }
 }

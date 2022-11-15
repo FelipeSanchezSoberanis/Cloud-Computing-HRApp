@@ -36,4 +36,15 @@ class AppTest {
 
         assertEquals(5, employees.length);
     }
+
+    @Test
+    void numberOfEmployeesInDepartment() {
+        Department department = new Department();
+
+        for (int i = 0; i < 5; i++) {
+            department.addEmployee(new Employee());
+        }
+
+        assertEquals(5, department.getNumberOfEmployees());
+    }
 }
