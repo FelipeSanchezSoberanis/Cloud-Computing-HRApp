@@ -5,11 +5,15 @@ package HRApp;
 
 public class App {
 
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Department department = new Department();
+
+        for (int i = 0; i < 5; i++) {
+            department.addEmployee(new Employee(i, "Name-" + i, 1000 * i));
+        }
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(department.getEmployees()[i].getName());
+        }
     }
 }

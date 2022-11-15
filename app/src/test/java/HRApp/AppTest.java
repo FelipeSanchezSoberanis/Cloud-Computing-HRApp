@@ -19,4 +19,21 @@ class AppTest {
 
         assertThrows(IndexOutOfBoundsException.class, () -> department.addEmployee(new Employee()));
     }
+
+    @Test
+    void nonNullEmployeesInDeparment() {
+        Department department = new Department();
+
+        for (int i = 0; i < 5; i++) {
+            department.addEmployee(new Employee());
+        }
+
+        Employee[] employees = department.getEmployees();
+
+        for (Employee e : employees) {
+            assertNotNull(e);
+        }
+
+        assertEquals(5, employees.length);
+    }
 }
