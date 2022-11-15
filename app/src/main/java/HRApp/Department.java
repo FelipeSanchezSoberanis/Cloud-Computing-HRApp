@@ -39,4 +39,14 @@ public class Department {
         }
         return null;
     }
+
+    public double getTotalEmployeeSalary() {
+        double totalSalary = 0;
+
+        for (Employee e : getEmployees()) {
+            totalSalary += e.getSalary();
+        }
+
+        return totalSalary;
+    }
 }

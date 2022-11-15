@@ -64,4 +64,15 @@ class AppTest {
 
         assertNull(employeeNoExists);
     }
+
+    @Test
+    void getDepartmentTotalSalary() {
+        Department department = new Department();
+
+        for (int i = 0; i < 5; i++) {
+            department.addEmployee(new Employee(i, "Name-" + i, 1000));
+        }
+
+        assertEquals(5000, department.getTotalEmployeeSalary());
+    }
 }
