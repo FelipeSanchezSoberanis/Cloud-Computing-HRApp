@@ -30,4 +30,13 @@ public class Department {
     public int getNumberOfEmployees() {
         return lastValidEmployee + 1;
     }
+
+    public Employee getEmployeeById(int id) {
+        for (Employee e : getEmployees()) {
+            if (e.getId() == id) {
+                return e;
+            }
+        }
+        return null;
+    }
 }

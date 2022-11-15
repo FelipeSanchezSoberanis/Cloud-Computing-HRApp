@@ -47,4 +47,21 @@ class AppTest {
 
         assertEquals(5, department.getNumberOfEmployees());
     }
+
+    @Test
+    void getEmployeeById() {
+        Department department = new Department();
+
+        for (int i = 0; i < 5; i++) {
+            department.addEmployee(new Employee(i, "Name-" + i, 1000 * i));
+        }
+
+        Employee employeeExists = department.getEmployeeById(2);
+
+        assertNotNull(employeeExists);
+
+        Employee employeeNoExists = department.getEmployeeById(5);
+
+        assertNull(employeeNoExists);
+    }
 }
