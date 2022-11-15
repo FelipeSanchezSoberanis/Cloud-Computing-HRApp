@@ -14,10 +14,13 @@ class AppTest {
         Department department = new Department();
 
         for (int i = 0; i < 10; i++) {
-            department.addEmployee(new Employee());
+            department.addEmployee(new Employee(i, "Name-" + i, 1000 + 500 * i));
         }
 
-        assertThrows(IndexOutOfBoundsException.class, () -> department.addEmployee(new Employee()));
+        assertThrows(
+            IndexOutOfBoundsException.class,
+            () -> department.addEmployee(new Employee(1, "Name", 1000))
+        );
     }
 
     @Test
@@ -25,7 +28,7 @@ class AppTest {
         Department department = new Department();
 
         for (int i = 0; i < 5; i++) {
-            department.addEmployee(new Employee());
+            department.addEmployee(new Employee(i, "Name-" + i, 1000 + 500 * i));
         }
 
         Employee[] employees = department.getEmployees();
@@ -42,7 +45,7 @@ class AppTest {
         Department department = new Department();
 
         for (int i = 0; i < 5; i++) {
-            department.addEmployee(new Employee());
+            department.addEmployee(new Employee(i, "Name-" + i, 1000 + 500 * i));
         }
 
         assertEquals(5, department.getNumberOfEmployees());
