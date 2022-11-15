@@ -6,14 +6,24 @@ package HRApp;
 public class App {
 
     public static void main(String[] args) {
+        System.out.println("Application starting");
+
         Department department = new Department();
+        System.out.println(department.toString());
 
         for (int i = 0; i < 5; i++) {
-            department.addEmployee(new Employee(i, "Name-" + i, 1000 * i));
+            department.addEmployee(new Employee(i, "Name-" + i, 1000 + 500 * i));
         }
 
-        for (int i = 0; i < 10; i++) {
-            System.out.println(department.getEmployees()[i].getName());
+        Employee foundEmployee = department.getEmployeeById(3);
+        System.out.println(foundEmployee.toString());
+
+        Employee[] allEmployees = department.getEmployees();
+        for (Employee e : allEmployees) {
+            System.out.println(e.toString());
         }
+
+        System.out.println(department.getTotalEmployeeSalary());
+        System.out.println(department.getAverageEmployeeSalary());
     }
 }

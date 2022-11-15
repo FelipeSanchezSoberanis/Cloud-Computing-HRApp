@@ -55,4 +55,14 @@ public class Department {
 
         return getTotalEmployeeSalary() / getNumberOfEmployees();
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "Department [numberOfEmployees=%s, totalEmployeeSalary=%s, averageEmployeeSalary=%s]",
+            getNumberOfEmployees(),
+            getTotalEmployeeSalary(),
+            getAverageEmployeeSalary()
+        );
+    }
 }
