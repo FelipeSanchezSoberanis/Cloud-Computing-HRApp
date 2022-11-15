@@ -49,4 +49,10 @@ public class Department {
 
         return totalSalary;
     }
+
+    public double getAverageEmployeeSalary() {
+        if (getNumberOfEmployees() == 0) return 0;
+
+        return getTotalEmployeeSalary() / getNumberOfEmployees();
+    }
 }

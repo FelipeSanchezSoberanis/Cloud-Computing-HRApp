@@ -75,4 +75,19 @@ class AppTest {
 
         assertEquals(5000, department.getTotalEmployeeSalary());
     }
+
+    @Test
+    void getAverageDeparmentSalary() {
+        Department department = new Department();
+
+        for (int i = 0; i < 5; i++) {
+            department.addEmployee(new Employee(i, "Name-" + i, 1000 + 500 * i));
+        }
+
+        assertEquals(2000, department.getAverageEmployeeSalary());
+
+        Department emptyDepartment = new Department();
+
+        assertEquals(0, emptyDepartment.getAverageEmployeeSalary());
+    }
 }
