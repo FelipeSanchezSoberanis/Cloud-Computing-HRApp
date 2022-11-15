@@ -10,8 +10,13 @@ import org.junit.jupiter.api.Test;
 class AppTest {
 
     @Test
-    void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    void departmentEmployeeArraySizeLimit() {
+        Department department = new Department();
+
+        for (int i = 0; i < 10; i++) {
+            department.addEmployee(new Employee());
+        }
+
+        assertThrows(IndexOutOfBoundsException.class, () -> department.addEmployee(new Employee()));
     }
 }
